@@ -1,6 +1,7 @@
 package lc.core.entity;
 
-import com.minelc.CORE.ConfigMananger.ConfigMananger;
+import lc.core.LCCore;
+import lc.core.configuration.ConfigMananger;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -88,7 +89,7 @@ public class Database {
         }
     }
     public static void saveWhitelistPlayer(final Jugador jug) {
-        CoreMain.getInstance().getServer().getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable() {
+        LCCore.getInstance().getServer().getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable() {
             @Override
             public void run() {
                 PreparedStatement preparedStatement = null;
@@ -295,7 +296,7 @@ public class Database {
     }
 
     public static void loadPlayerCoins_ASYNC(final Jugador jug) {
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 PreparedStatement preparedStatement = null;
@@ -327,7 +328,7 @@ public class Database {
     }
 
     public static void loadPlayerRank_ASYNC(final Jugador jug) {
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 PreparedStatement preparedStatement = null;
@@ -416,7 +417,7 @@ public class Database {
     }
 
     public static void loadPlayerOpciones_SVS_ASYNC(final Jugador jug) {
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 PreparedStatement preparedStatement = null;
@@ -519,7 +520,7 @@ public class Database {
     }
 
     public static void loadPlayerSV_HG_ASYNC(final Jugador jug) {
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 PreparedStatement preparedStatement = null;
@@ -589,7 +590,7 @@ public class Database {
     }
 
     public static void loadPlayerSV_KITPVP_ASYNC(final Jugador jug) {
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -658,7 +659,7 @@ public class Database {
     public static void savePlayerSV_POTPVP(final Jugador jug) {
         if (!jug.SaveSQL())
             return;
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -757,7 +758,7 @@ public class Database {
     }
 
     public static void loadPlayerSV_SKYWARS_ASYNC(final Jugador jug) {
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -796,7 +797,7 @@ public class Database {
     }
 
     public static void loadPlayerSV_BEDWARS_KITS(final Jugador jug) {
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -827,7 +828,7 @@ public class Database {
     }
 
     public static void loadPlayerSV_SKYWARS_KITS(final Jugador jug) {
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -858,7 +859,7 @@ public class Database {
     }
 
     public static void loadPlayerSV_HG_KITS(final Jugador jug) {
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -889,7 +890,7 @@ public class Database {
     }
 
     public static void loadPlayerSV_CHG_KITS(final Jugador jug) {
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -920,7 +921,7 @@ public class Database {
     }
 
     public static void loadPlayerSV_PVPGAMES(final Jugador jug) {
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -1000,7 +1001,7 @@ public class Database {
 
             return;
         }
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -1051,7 +1052,7 @@ public class Database {
     public static void savePlayerCoins(final Jugador jug) {
         if (!jug.SaveSQL())
             return;
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -1077,7 +1078,7 @@ public class Database {
     public static void saveCHGRank(final Jugador jug) {
         if (!jug.SaveSQL())
             return;
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -1103,7 +1104,7 @@ public class Database {
     public static void savePlayerRank(final Jugador jug) {
         if (!jug.SaveSQL())
             return;
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -1177,7 +1178,7 @@ public class Database {
     public static void savePlayerOpciones_SVS(final Jugador jug) {
         if (!jug.SaveSQL())
             return;
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -1212,7 +1213,7 @@ public class Database {
     public static void savePlayerSV_HG(final Jugador jug) {
         if (!jug.SaveSQL())
             return;
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -1248,7 +1249,7 @@ public class Database {
     public static void savePlayerSV_CHG(final Jugador jug) {
         if (!jug.SaveSQL())
             return;
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -1285,7 +1286,7 @@ public class Database {
     public static void savePlayerSV_KITPVP(final Jugador jug) {
         if (!jug.SaveSQL())
             return;
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -1316,7 +1317,7 @@ public class Database {
     public static void savePlayerSV_SKYWARS(final Jugador jug) {
         if (!jug.SaveSQL())
             return;
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -1351,7 +1352,7 @@ public class Database {
     public static void savePlayerSV_BEDWARS(final Jugador jug) {
         if (!jug.SaveSQL())
             return;
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
@@ -1386,7 +1387,7 @@ public class Database {
     public static void savePlayerSV_PVPGAMES(final Jugador jug) {
         if (!jug.SaveSQL())
             return;
-        Bukkit.getScheduler().runTaskAsynchronously(CoreMain.getInstance(), new Runnable()
+        Bukkit.getScheduler().runTaskAsynchronously(LCCore.getInstance(), new Runnable()
         {
             public void run() {
                 preparedStatement = null;
